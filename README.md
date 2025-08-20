@@ -1,6 +1,6 @@
 # 🎯 Multi-Agent AI Projects
 
-This repository contains three specialized **AI Agents** built with the OpenAI/Gemini Agent SDK and Chainlit.  
+This repository contains four specialized **AI Agents** built with the OpenAI/Gemini Agent SDK and Chainlit.  
 Each project demonstrates how to design and run domain-specific agents with **handoffs, tools, and interactive chat**.
 
 ---
@@ -48,44 +48,62 @@ An AI assistant for **planning trips** and exploring destinations.
 
 ---
 
-## ⚙️ Technology Stack
+### 4. Smart Student Agent 🤖
+An **AI-powered academic assistant** that helps students learn more effectively.  
+Built on **Google Gemini API** + **Chainlit** for an interactive learning experience.
 
-- **Python 3.13+**  
-- **Chainlit** – chat UI & session management  
-- **OpenAI Agent SDK / Gemini API** – LLM-powered agent framework  
-- **Custom Tools** – e.g., career roadmap generator  
+**Features:**
+- Instantly answers academic questions  
+- Provides effective study tips for any topic  
+- Summarizes long passages into clear explanations  
+- Easy to extend with subject-specific tools (Math solver, Code explainer, etc.)  
+- Runs locally with Chainlit web UI  
 
----
+**Run Command:**
+```bash
+chainlit run student_agent.py -w
+⚙️ Technology Stack
+Python 3.10+ / 3.13+
 
-## 🚀 Setup & Run
+Chainlit – chat UI & session management
 
-For each project (`Career_Mentor-Agent`, `Game-Master-Agent`, `Travel-Agent`):
+OpenAI Agent SDK / Gemini API – LLM-powered agent framework
 
-1. **Navigate to the project folder**:
-   ```bash
-   cd Project-Name
+Custom Tools – e.g., career roadmap generator
+
+🚀 Setup & Run
+For each project (Career_Mentor-Agent, Game-Master-Agent, Travel-Agent, Smart_Student_Agent):
+
+Navigate to the project folder:
+
+bash
+Copy
+Edit
+cd Project-Name
 Install dependencies:
 
 bash
 Copy
 Edit
-uv sync
-Create .env file with your Gemini API key:
+uv sync   # or pip install -r requirements.txt (for Smart Student Agent)
+Create .env file with your API key:
 
 env
 Copy
 Edit
 GEMINI_API_KEY=your_api_key_here
+GOOGLE_API_KEY=your_api_key_here   # For Smart Student Agent
 Run the project:
 
 bash
 Copy
 Edit
-chainlit run main.py
+chainlit run main.py        # For Career, Game, Travel Agents
+chainlit run student_agent.py -w   # For Smart Student Agent
 🧪 Testing
-Start the Chainlit app in the browser (default: http://localhost:8000).
+Start the Chainlit app in the browser (http://localhost:8000)
 
-Begin a chat with the agent.
+Begin a chat with the selected agent
 
 Try different use cases:
 
@@ -95,6 +113,8 @@ Play a text-based adventure → Game Master Agent
 
 Plan a trip → Travel Agent
 
+Ask academic questions → Smart Student Agent
+
 📂 Repository Structure
 css
 Copy
@@ -102,16 +122,19 @@ Edit
 Practice-Agents-main/
 ├── Career_Mentor-Agent/
 ├── Game-Master-Agent/
-└── Travel-Agent/
+├── Travel-Agent/
+└── Smart_Student_Agent/
 Each folder contains:
 
-main.py – entry point with agent logic
+main.py / student_agent.py – entry point with agent logic
 
-pyproject.toml – project dependencies
+pyproject.toml / requirements.txt – project dependencies
 
 chainlit.md – welcome screen
 
 .env – environment variables (to be created)
+
+README.md – project documentation
 
 👨‍💻 Developer
 Developed with ❤️ by CodeWithAhtii
