@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Editors/OS
+.vscode/
+.idea/
+.DS_Store
+
+# Env & local configs
+.env
+*.env
+
+# Chainlit cache (keep config.toml)
+.chainlit/*.json
+.chainlit/cache/
